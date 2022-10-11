@@ -5,6 +5,7 @@ import Statistics from './components/Statistics'
 import Blog from './components/Blog'
 import TakeQuiz from './components/TakeQuiz';
 import { ToastContainer } from 'react-toastify';
+import ErrorPage from './components/ErrorPage';
 
 const router = createBrowserRouter([
   {
@@ -13,7 +14,8 @@ const router = createBrowserRouter([
       { path: 'quiz/:id', loader: ({ params }) => fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`), element: <TakeQuiz /> },
       { path: 'statistics', loader: () => fetch('https://openapi.programming-hero.com/api/quiz'), element: <Statistics /> },
       { path: 'blog', element: <Blog /> },
-    ]
+    ],
+    errorElement: <ErrorPage />
   }
 ]);
 
