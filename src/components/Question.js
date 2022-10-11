@@ -1,7 +1,7 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { EyeIcon } from '@heroicons/react/24/solid'
+import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/solid'
 import { useState } from 'react';
 
 
@@ -14,7 +14,7 @@ const Question = ({ data, serial }) => {
     const handleAnswer = (selectedAns) => {
         if (selectedAns === correctAnswer) {
             toast.success("Correct answer!", { autoClose: 1500, theme: "colored" });
-        } else{
+        } else {
             toast.error("Wrong answer!", { autoClose: 1500, theme: "colored" });
         }
     }
@@ -27,12 +27,12 @@ const Question = ({ data, serial }) => {
             <div className='grid grid-cols-2 gap-3 mt-5'>
                 {
                     options.map(option => (
-                        <code onClick={(e) => handleAnswer(e.target.innerText)} key={data.id + uniqueKey++} className={`${showAns ? correctAnswer === option ? 'bg-green-600' : 'bg-red-700' : 'bg-slate-900'} p-5 rounded-lg flex items-center justify-center cursor-pointer hover:bg-sky-600`}>{option}</code>
+                        <code onClick={(e) => handleAnswer(e.target.innerText)} key={data.id + uniqueKey++} className={`${showAns ? correctAnswer === option ? 'bg-green-500' : 'bg-red-600' : 'bg-slate-900 hover:bg-sky-600'} p-5 rounded-lg flex items-center justify-center cursor-pointer`}>{option}</code>
                     ))
                 }
             </div>
-            <div onClick={revealAnswer} className='absolute top-5 right-5 cursor-pointer'>
-                <EyeIcon className="h-6 w-6 text-indigo-400" />
+            <div onClick={revealAnswer} className='absolute top-5 right-5 cursor-pointer h-6 w-6 text-indigo-400'>
+                {showAns ? <EyeSlashIcon /> : <EyeIcon />}
             </div>
         </div>
     )
