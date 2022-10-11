@@ -1,7 +1,7 @@
 # Quizlet
 ##### An online quiz platform.
 
-[Live Site](https://quizlet1.netlify.app/)
+[https://quizlet1.netlify.app/](https://quizlet1.netlify.app/)
 
 > Project Description :
 - **Stack:** React, Tailwind, React Dom
