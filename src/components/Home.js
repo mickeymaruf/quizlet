@@ -5,7 +5,6 @@ import Quiz from './Quiz';
 
 const Home = () => {
     const quizzes = useLoaderData().data;
-    console.log(quizzes);
     return (
         <section className='bg-slate-900 text-white'>
             <div className='w-10/12 mx-auto'>
