@@ -2,8 +2,8 @@ import React from 'react';
 
 const Blog = () => {
     return (
-        <section className='bg-slate-900 text-white pb-20'>
-            <div className='w-8/12 mx-auto'>
+        <section className='bg-slate-900 text-white pb-8 md:pb-20'>
+            <div className='w-10/12 md:w-8/12 mx-auto'>
                 <h3 className='text-2xl font-medium text-center mb-8'><code>QNA</code></h3>
                 <div className="bg-slate-700 p-8 mb-10 rounded-xl relative">
                     <div className='text-2xl mb-1'><code>What is the purpose of React Router?</code></div>
