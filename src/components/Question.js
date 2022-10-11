@@ -11,8 +11,8 @@ const Question = ({ data, serial }) => {
     const { correctAnswer, question, options } = data;
     const [showAns, setShowAns] = useState(false);
 
-    const handleAnswer = (selectedAns) => {
-        if (selectedAns === correctAnswer) {
+    const handleAnswer = (option) => {
+        if (option === correctAnswer) {
             toast.success("Correct answer!", { autoClose: 1500, theme: "colored" });
         } else {
             toast.error("Wrong answer!", { autoClose: 1500, theme: "colored" });
@@ -27,7 +27,7 @@ const Question = ({ data, serial }) => {
             <div className='grid grid-cols-2 gap-3 mt-5'>
                 {
                     options.map(option => (
-                        <code onClick={(e) => handleAnswer(e.target.innerText)} key={data.id + uniqueKey++} className={`${showAns ? correctAnswer === option ? 'bg-green-500' : 'bg-red-600' : 'bg-slate-900 hover:bg-sky-600'} p-3 sm:p-5 rounded-lg flex items-center justify-center cursor-pointer`}>{option}</code>
+                        <code onClick={() => handleAnswer(option)} key={data.id + uniqueKey++} className={`${showAns ? correctAnswer === option ? 'bg-green-500' : 'bg-red-600' : 'bg-slate-900 hover:bg-sky-600'} p-3 sm:p-5 rounded-lg flex items-center justify-center cursor-pointer`}>{option}</code>
                     ))
                 }
             </div>

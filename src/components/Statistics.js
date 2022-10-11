@@ -14,8 +14,8 @@ const Statistics = () => {
                         <XAxis dataKey="name" />
                         <YAxis />
                         <Tooltip contentStyle={{ backgroundColor: '#0F172A', color: '#fff' }} itemStyle={{color: '#fff'}} />
-                        <Bar dataKey="total" fill="#8884d8" />
-                        <Bar dataKey="name" fill="#82ca9d" />
+                        <Bar name='Total Quiz' dataKey="total" fill="#8884d8" />
+                        <Bar name='Quiz Topic' dataKey="name" fill="#82ca9d" />
                     </BarChart>
                 </ResponsiveContainer>
             </div>
